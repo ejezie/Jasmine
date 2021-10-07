@@ -61,7 +61,7 @@ jQuery(document).ready(function ($) {
 var CaptchaCallback = function () {
   jQuery(".g-recaptcha").each(function () {
     grecaptcha.render(this, {
-      sitekey: "6Lf4vYAcAAAAAKtdlvL6TxY1zKiCLDYQ5mBGS8nK",
+      sitekey: "6Lc0TLUcAAAAAAlvlvtMWKlCpjNlZAUwe4wlw3HH",
       callback: correctCaptcha,
     });
   });
