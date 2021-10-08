@@ -79,13 +79,18 @@ $text-color: #151515;
     align-items: center;
     justify-content: space-between;
     height: 6rem;
+    .logo-wrap{
+      display: flex;
+      align-items: center;
+    }
     .nav-img {
       width: 12rem;
       margin-left: 1rem;
     }
     .bars{
-      margin: 1rem 0rem;
+      margin: 0rem 1.5rem;
       display: none;
+      font-size: 1.5rem;
       @media (max-width: 960px) {
         display: block;
       }
