@@ -34,14 +34,26 @@ link %} dans le "if". Donc il faut écrire le lien manuellement. {% endcomment %
         <a href="{% link service.html %}" class="nav-item {% if page.url == '/service' %} active {% endif %}">Services</a>
         <a href="{% link contact.html %}" class="nav-item {% if page.url == '/contact' %} active {% endif %}">Contact</a>
         <div class="search-wrap">
-          <i class="fas fa-search search"></i>
-          <i class="fal fa-times times"></i>
+          <i class="fas fa-search search" onclick="showElement(); onElement(); offElement();"></i>
+          <i class="fal fa-times times" onclick="showElement(); onElement(); offElement();"></i>
           <div class="search-input">
             <input type="text">
-            <button><i class="fas fa-search search"></i></button>
+            <button><i class="fas fa-search find"></i></button>
           </div>
         </div>
       </div>
       <button class="btn"><a href="{% link devis.html %}" class="nav-item">Devis</a></button>
   </div>
 </div>
+
+<script>
+  function showElement() {
+    document.querySelector(".search-input").classList.toggle("show")
+  };
+  function onElement() {
+    document.querySelector(".times").classList.toggle("on")
+  };
+  function offElement() {
+    document.querySelector(".search").classList.toggle("off")
+  };
+</script>
