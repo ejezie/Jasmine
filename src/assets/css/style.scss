@@ -2,10 +2,6 @@
 ---
 
 // Imports
----
----
-
-// Imports
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
 * {
   box-sizing: border-box;
@@ -24,8 +20,11 @@ $text-color: #151515;
 // General Styles
 .text {
 }
-.btn{
-  
+.btn {
+  border: none;
+  border-radius: 30px;
+  width: 12rem;
+  height: 3.3rem;
 }
 
 .navbar {
@@ -48,6 +47,9 @@ $text-color: #151515;
     align-items: center;
     background-color: #171424;
     height: 3.6rem;
+    @media (max-width: 960px) {
+      display: none;
+    }
     .content-wrap {
       display: flex;
       align-items: center;
@@ -81,11 +83,26 @@ $text-color: #151515;
       width: 12rem;
       margin-left: 1rem;
     }
+    .bars{
+      margin: 1rem 0rem;
+      display: none;
+      @media (max-width: 960px) {
+        display: block;
+      }
+    }
     .links-container {
-      a {
-        margin-right: 2rem;
+      display: flex;
+      .nav-item {
+        margin-right: 3rem;
         text-decoration: none;
         position: relative;
+        color: $text-color;
+        font-weight: 500;
+        font-size: 1.1rem;
+        letter-spacing: 1px;
+        @media (max-width: 960px) {
+          display: none;
+        }
         &::after {
           content: "";
           position: absolute;
@@ -100,10 +117,65 @@ $text-color: #151515;
           width: 100%;
         }
       }
+      .search-wrap {
+        position: relative;
+        .times {
+          position: absolute;
+          top: -6px;
+          left: 0;
+          font-size: 2rem;
+          display: none;
+        }
+        .search {
+          font-size: 1.4rem;
+          cursor: pointer;
+        }
+        .search-input{
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          opacity: 0;
+          width: 22rem;
+          background-color: rgba(255, 255, 255, 0.9);
+          border-radius: 30px;
+          position: absolute;
+          bottom: -101px;
+          left: -320px;
+          height: 4rem;
+          input{
+            background-color: transparent;
+            border: none;
+            width: 20rem;
+            margin-left: 0.5rem;
+            padding: 1rem;
+            outline: none;
+          }
+          button{
+            border: none;
+            background-color: transparent;
+            i{
+              margin-right: 0.8rem;
+            }
+          }
+        }
+      }
     }
-    .btn{
+    .btn {
       margin-right: 1rem;
+      a {
+        text-decoration: none;
+        font-weight: 900;
+        color: white;
+      }
+      background-color: $base-color-one;
+      cursor: pointer;
+      transition: all 0.3s;
+      &:hover {
+        background-color: #ff4901;
+      }
+      @media (max-width: 960px) {
+        display: none;
+      }
     }
   }
 }
-

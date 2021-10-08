@@ -1,37 +1,48 @@
 {% comment %} Lien actuel avec class="active" Nous nous pouvons pas utiliser {%
-    link %} dans le "if". Donc il faut écrire le lien manuellement. {% endcomment %}
-    
-    <div class="navbar">
-      <div class="nav-top">
-        <div class="content-wrap">
-          <div class="content">
-            <i class="fas fa-phone-alt"></i>{{site.data.company.phone}}
-          </div>
-          <div class="content">
-            <i class="fas fa-map-marker-alt"></i></i>{{site.data.company.address}}
-          </div>
-          <div class="content">
-            <i class="fas fa-envelope"></i>{{site.data.company.email}}
-          </div>
+  link %} dans le "if". Donc il faut écrire le lien manuellement. {% endcomment %}
+  
+  <div class="navbar">
+    <div class="nav-top">
+      <div class="content-wrap">
+        <div class="content">
+          <i class="fas fa-phone-alt"></i>{{site.data.company.phone}}
         </div>
-        <div class="logo-wrap">
-            <i class="fab fa-facebook-f"></i>
-            <i class="fab fa-twitter"></i>
-            <i class="fab fa-instagram"></i>
-            <i class="fab fa-google"></i>
-            <i class="fab fa-linkedin-in"></i>
+        <div class="content">
+          <i class="fas fa-map-marker-alt"></i></i>{{site.data.company.address}}
+        </div>
+        <div class="content">
+          <i class="fas fa-envelope"></i>{{site.data.company.email}}
         </div>
       </div>
-      <div class="nav-bottom">
-          <img src="../assets/img/logo.png" alt="logo" class="nav-img">
-          <div class="links-container">
-            <a href="{% link accueil.html %}" class="nav-item {% if page.url == '/' %} active {% endif %}">Accueil</a>
-            <a href="{% link notre-enterprise.html %}" class="nav-item {% if page.url == '/notre-enterprise' %} active {% endif %}">Notre Enterprise</a>
-            <a href="{% link service.html %}" class="nav-item {% if page.url == '/service' %} active {% endif %}">Services</a>
-            <a href="{% link contact.html %}" class="nav-item {% if page.url == '/contact' %} active {% endif %}">Contact</a>
-            <i class="fas fa-search"></i>
-          </div>
-          <button class="btn"><a href="{% link devis.html %}" class="nav-item {% if page.url == '/devis' %} active {% endif %}">Devis</a></button>
+      <div class="logo-wrap">
+          <i class="fab fa-facebook-f"></i>
+          <i class="fab fa-twitter"></i>
+          <i class="fab fa-instagram"></i>
+          <i class="fab fa-google"></i>
+          <i class="fab fa-linkedin-in"></i>
       </div>
     </div>
-    
+    <div class="nav-bottom">
+      <div>
+        <i class="fas fa-bars bars"></i>
+        <img src="../assets/img/logo.png" alt="logo" class="nav-img">
+      </div>
+       
+        <div class="links-container">
+          <a href="{% link accueil.html %}" class="nav-item {% if page.url == '/' %} active {% endif %}">Accueil</a>
+          <a href="{% link notre-enterprise.html %}" class="nav-item {% if page.url == '/notre-enterprise' %} active {% endif %}">Notre Enterprise</a>
+          <a href="{% link service.html %}" class="nav-item {% if page.url == '/service' %} active {% endif %}">Services</a>
+          <a href="{% link contact.html %}" class="nav-item {% if page.url == '/contact' %} active {% endif %}">Contact</a>
+          <div class="search-wrap">
+            <i class="fas fa-search search"></i>
+            <i class="fal fa-times times"></i>
+            <div class="search-input">
+              <input type="text">
+              <button><i class="fas fa-search search"></i></button>
+            </div>
+          </div>
+        </div>
+        <button class="btn"><a href="{% link devis.html %}" class="nav-item">Devis</a></button>
+    </div>
+  </div>
+  
