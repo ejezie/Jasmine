@@ -2,10 +2,10 @@ const swiper = new Swiper(".swiper-one", {
   // Optional parameters
   direction: "horizontal",
   loop: true,
-  speed:1000,
+  speed:4000,
     autoplay:
     {
-      delay: 1000,
+      delay: 4000,
     },
 
   // If we need pagination
@@ -24,5 +24,3 @@ const swiper = new Swiper(".swiper-one", {
     el: ".scrollbar",
   },
 });
-
-
