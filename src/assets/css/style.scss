@@ -2,7 +2,9 @@
 ---
 
 // Imports
+
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -21,18 +23,22 @@ $text-color: #151515;
 // General Styles
 .text {
   color: white;
+  max-width: 380px;
 }
-.heading{
-  font-size: 2rem;
+.heading {
+  font-size: 2.4rem;
   color: white;
-  font-weight: 900;
+  font-weight: 800;
 }
 .btn {
   border: none;
   border-radius: 30px;
+  font-size: 1.2rem;
+  font-weight: 600;
   width: 12rem;
   height: 3.3rem;
   color: white;
+  background-color: $base-color-one;
 }
 
 // NAVBAR
@@ -89,7 +95,7 @@ $text-color: #151515;
     align-items: center;
     justify-content: space-between;
     height: 6rem;
-    .logo-wrap{
+    .logo-wrap {
       display: flex;
       align-items: center;
     }
@@ -97,7 +103,7 @@ $text-color: #151515;
       width: 12rem;
       margin-left: 1rem;
     }
-    .bars{
+    .bars {
       margin: 0rem 1.5rem;
       display: none;
       font-size: 1.5rem;
@@ -144,7 +150,6 @@ $text-color: #151515;
           font-size: 2rem;
           display: none;
           cursor: pointer;
-          
         }
         .search {
           position: absolute;
@@ -154,15 +159,15 @@ $text-color: #151515;
           cursor: pointer;
           transition: all 1s;
         }
-        .on{
+        .on {
           display: block;
           transform: rotate(180deg);
           transition: all 1s;
         }
-        .off{
+        .off {
           display: none;
         }
-        .search-input{
+        .search-input {
           display: flex;
           align-items: center;
           justify-content: space-between;
@@ -174,7 +179,7 @@ $text-color: #151515;
           bottom: -101px;
           left: -320px;
           height: 4rem;
-          input{
+          input {
             background-color: transparent;
             border: none;
             width: 20rem;
@@ -182,16 +187,16 @@ $text-color: #151515;
             padding: 1rem;
             outline: none;
           }
-          button{
+          button {
             border: none;
             background-color: transparent;
-            .find{
+            .find {
               margin-right: 0.8rem;
               font-size: 1.5rem;
             }
           }
         }
-        .show{
+        .show {
           opacity: 1;
         }
       }
@@ -220,27 +225,215 @@ $text-color: #151515;
 
 .swiper-one {
   height: 100vh;
-  .swiper-wrapper{
-    .swiper-slide{
+  width: 100vw;
+  @media (max-width: 960px) {
+    height: 60vh;
+  }
+  .swiper-wrapper {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .swiper-slide {
       display: flex;
       align-items: center;
-      justify-content: center;
-      width: 100vw;
+      justify-content: space-between;
+      width: 100%;
+      .text-wrap {
+        display: flex;
+        flex-direction: column;
+        margin-left: 3rem;
+        .heading {
+          margin-bottom: 4.8rem;
+          position: relative;
+          &::before {
+            content: "";
+            position: absolute;
+            bottom: -3rem;
+            left: 0;
+            background-color: $base-color-one;
+            width: 40%;
+            height: 3px;
+          }
+        }
+        .text {
+          margin-bottom: 3rem;
+          max-width: 380px;
+          line-height: 1.5;
+        }
+        .btn {
+          background: transparent;
+          border: solid white 2px;
+          font-size: 1rem;
+          font-weight: 700;
+        }
+      }
+      .form {
+        margin-right: 3rem;
+        background-color: rgba(255, 255, 255, 0.97);
+        display: none;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        label {
+          font-size: 0.7rem;
+          color: rgb(150, 149, 149);
+          letter-spacing: 1.2px;
+        }
+        .input-wrap {
+          .inp {
+            margin: 0.5rem 0rem;
+          }
+          input {
+            border: 0px transparent solid;
+            width: 90%;
+            height: 4rem;
+            border-radius: 30px;
+          }
+        }
+        .counter-wrap {
+          display: flex;
+          align-items: center;
+          background-color: white;
+          .counter {
+            background-color: transparent;
+          }
+        }
+      }
     }
-    .bg-one{
-      background: url(../img/Urgences-hopital.jpg);
+    .bg-one {
+      background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+        url(../img/Urgences-hopital.jpg);
       background-size: cover;
-      background-position: center center ;
+      background-position: center center;
     }
-    .bg-two{
-      background: url(../img/ambularge.jpeg);
+    .bg-two {
+      background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+        url(../img/ambularge.jpeg);
       background-size: cover;
-      background-position: center center ;
+      background-position: center center;
     }
-    .bg-three{
-      background: url(../img/Ambuspeed.jpeg);
+    .bg-three {
+      background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(129, 62, 62, 0.2)),
+        url(../img/Ambuspeed.jpeg);
       background-size: cover;
-      background-position: center center ;
+      background-position: center center;
+    }
+  }
+  .page{
+    display: flex !important;
+    align-items: flex-start !important;
+    margin: 0 0 2rem 3rem;
+    .swiper-pagination-bullet{
+      height: 1rem !important;
+      width: 1rem !important;
+      margin: 0 1rem !important;
+    }
+  }
+}
+
+// Home Section One
+.one {
+  width: 100vw;
+  margin-top: 9rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  .heading-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    .heading {
+      color: black;
+      position: relative;
+      margin-left: 9rem;
+      font-weight: 600;
+      &::before {
+        position: absolute;
+        content: "ROOMS & SUITES";
+        top: -5rem;
+        left: -6rem;
+        color: rgb(247, 247, 247);
+        font-size: 7rem;
+        z-index: -1;
+        min-width: 90vw;
+      }
+    }
+    .btn {
+      width: 16rem;
+      height: 4rem;
+      margin-right: 3rem;
+    }
+  }
+  .img-heading {
+    width: 5rem;
+    margin-left: 9rem;
+  }
+  .content-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 3rem;
+    .content {
+      .img-wrap {
+        width: 24rem;
+        height: 15rem;
+        border-radius: 9px;
+        position: relative;
+        overflow: hidden;
+        margin: 0 0.5rem;
+        &:hover .content-img {
+          transform: scale(1.1);
+        }
+        &:hover .btn-wrap {
+          opacity: 1;
+        }
+        .content-img {
+          width: 24rem;
+          height: 15rem;
+          transition: all 1s;
+        }
+        .btn-wrap {
+          position: absolute;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          left: 0;
+          top: 0;
+          background: rgba(0, 0, 0, 0.5);
+          width: 100%;
+          height: 100%;
+          border-radius: 9px;
+          transition: all 1s;
+          opacity: 0;
+          .btn{
+            width: 8.5rem;
+            height: 3rem;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+    .content-text{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.5rem;
+      .text{
+        color: black;
+        font-weight: 500;
+        font-size: 1.1rem;
+        margin: 1rem 0 2rem 0;
+      }
+      .colored{
+        color: $base-color-one;
+      }
     }
   }
 }
