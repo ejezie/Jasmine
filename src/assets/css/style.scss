@@ -29,6 +29,18 @@ $text-color: #151515;
   font-size: 2.4rem;
   color: white;
   font-weight: 800;
+  @media (max-width: 960px) {
+    font-size: 2.1rem;
+  }
+  @media (max-width: 720px) {
+    font-size: 1.8rem;
+  }
+}
+.sub-heading {
+  font-size: 1.4rem;
+}
+.img-heading {
+  width: 5rem;
 }
 .btn {
   border: none;
@@ -44,6 +56,7 @@ $text-color: #151515;
 // NAVBAR
 
 .navbar {
+  width: 100vw;
   .active {
     color: #ff682e !important;
     position: relative;
@@ -63,6 +76,7 @@ $text-color: #151515;
     align-items: center;
     background-color: #171424;
     height: 3.6rem;
+    width: 100%;
     @media (max-width: 960px) {
       display: none;
     }
@@ -95,6 +109,7 @@ $text-color: #151515;
     align-items: center;
     justify-content: space-between;
     height: 6rem;
+    width: 100%;
     .logo-wrap {
       display: flex;
       align-items: center;
@@ -142,22 +157,29 @@ $text-color: #151515;
         }
       }
       .search-wrap {
+        background-color: yellow;
         position: relative;
         .times {
           position: absolute;
           top: -6px;
-          left: 0;
+          left: 0px;
           font-size: 2rem;
           display: none;
           cursor: pointer;
+          @media (max-width: 960px) {
+            left: -30px;
+          }
         }
         .search {
           position: absolute;
           top: -6px;
-          left: 0;
+          left: 0px;
           font-size: 1.4rem;
           cursor: pointer;
           transition: all 1s;
+          @media (max-width: 960px) {
+            left: -30px;
+          }
         }
         .on {
           display: block;
@@ -168,17 +190,17 @@ $text-color: #151515;
           display: none;
         }
         .search-input {
-          display: flex;
+          display: none;
           align-items: center;
           justify-content: space-between;
-          opacity: 0;
           width: 22rem;
-          background-color: rgba(145, 29, 29, 0.9);
           border-radius: 30px;
           position: absolute;
           bottom: -101px;
-          left: -320px;
+          left: -390px;
           height: 4rem;
+          z-index: 2;
+          background-color: rgba(255, 255, 255, 0.8);
           input {
             background-color: transparent;
             border: none;
@@ -197,7 +219,7 @@ $text-color: #151515;
           }
         }
         .show {
-          opacity: 1;
+          display: flex;
         }
       }
     }
@@ -227,7 +249,7 @@ $text-color: #151515;
   height: 100vh;
   width: 100vw;
   @media (max-width: 960px) {
-    height: 60vh;
+    height: 70vh;
   }
   .swiper-wrapper {
     height: 100%;
@@ -247,6 +269,9 @@ $text-color: #151515;
         .heading {
           margin-bottom: 4.8rem;
           position: relative;
+          @media (max-width: 720px) {
+            font-size: 1.5rem;
+          }
           &::before {
             content: "";
             position: absolute;
@@ -321,11 +346,11 @@ $text-color: #151515;
       background-position: center center;
     }
   }
-  .page{
+  .page {
     display: flex !important;
     align-items: flex-start !important;
     margin: 0 0 2rem 3rem;
-    .swiper-pagination-bullet{
+    .swiper-pagination-bullet {
       height: 1rem !important;
       width: 1rem !important;
       margin: 0 1rem !important;
@@ -341,36 +366,55 @@ $text-color: #151515;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  .heading-wrap {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  .head-img-wrap {
     width: 100%;
-    .heading {
-      color: black;
-      position: relative;
-      margin-left: 9rem;
-      font-weight: 600;
-      &::before {
-        position: absolute;
-        content: "ROOMS & SUITES";
-        top: -5rem;
-        left: -6rem;
-        color: rgb(247, 247, 247);
-        font-size: 7rem;
-        z-index: -1;
-        min-width: 90vw;
+    position: relative;
+    .heading-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      .heading {
+        color: black;
+        position: relative;
+        margin-left: 9rem;
+        font-weight: 600;
+        @media (max-width: 740px) {
+          margin-left: 1rem;
+        }
+        &::before {
+          position: absolute;
+          content: "ROOMS & SUITES";
+          top: -5rem;
+          left: -6rem;
+          color: rgb(247, 247, 247);
+          font-size: 7rem;
+          z-index: -1;
+          min-width: 90vw;
+          @media (max-width: 1000px) {
+            font-size: 5rem;
+          }
+          @media (max-width: 750px) {
+            display: none;
+          }
+        }
+      }
+      .btn {
+        width: 16rem;
+        height: 4rem;
+        margin-right: 3rem;
+        @media (max-width: 740px) {
+          margin-right: 0rem;
+        }
       }
     }
-    .btn {
-      width: 16rem;
-      height: 4rem;
-      margin-right: 3rem;
+    .img-heading {
+      width: 5rem;
+      margin-left: 9rem;
+      @media (max-width: 740px) {
+        margin-left: 3rem;
+      }
     }
-  }
-  .img-heading {
-    width: 5rem;
-    margin-left: 9rem;
   }
   .content-wrap {
     display: flex;
@@ -410,7 +454,7 @@ $text-color: #151515;
           border-radius: 9px;
           transition: all 1s;
           opacity: 0;
-          .btn{
+          .btn {
             width: 8.5rem;
             height: 3rem;
             font-size: 1rem;
@@ -420,20 +464,87 @@ $text-color: #151515;
         }
       }
     }
-    .content-text{
+    .content-text {
       display: flex;
       align-items: center;
       justify-content: space-between;
       padding: 0.5rem;
-      .text{
+      .text {
         color: black;
         font-weight: 500;
         font-size: 1.1rem;
         margin: 1rem 0 2rem 0;
       }
-      .colored{
+      .colored {
         color: $base-color-one;
       }
     }
   }
+}
+
+// Home Section Two
+.two {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: #f7f7f7;
+  .heading {
+    color: $text-color;
+    margin: 4rem 0 1.5rem 0;
+  }
+  .img-heading {
+  }
+  .content-wrap {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+    .content{
+      display: flex;
+      align-items: flex-start;
+      flex-direction: column;
+      padding: 3rem 1.5rem;
+      border: solid 1px rgb(230, 224, 224);
+      margin: 2rem 0.5rem;
+      border-radius: 10px;
+      height: 23.5rem;
+      transition: all 1s;
+      &:hover{
+        background-color: white;
+        box-shadow: 0.1px 0.1px 10px rgba(0, 0, 0, 0.1);
+      }
+      img{
+        width: 2rem;
+        margin: 0 0 2rem 0;
+      }
+      .sub-heading{
+        margin: 0 0 2rem 0;
+      }
+      .text{
+        color: black;
+        position: relative;
+        margin: 2rem 0 0 0;
+        max-width: 240px;
+        letter-spacing: 1.1px;
+        line-height: 1.5;
+        color: rgb(164, 167, 167);
+        font-weight: 300;
+        &::before{
+          position: absolute;
+          content: "";
+          top: -2em;
+          left: 0;
+          background-color: rgb(230, 224, 224)  ;
+          height: 1px;
+          width: 100%;
+        }
+      }
+      
+    }
+    #lng{
+      height: 25rem;
+    }
+  }
+  
 }
