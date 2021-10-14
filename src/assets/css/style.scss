@@ -19,6 +19,7 @@ body {
 
 $base-color-one: #ff682e;
 $text-color: #151515;
+$fade-color: rgb(230, 224, 224);
 
 // General Styles
 .text {
@@ -264,6 +265,7 @@ $text-color: #151515;
       align-items: center;
       justify-content: space-between;
       width: 100%;
+      // opacity: 1 !important;
       .text-wrap {
         display: flex;
         flex-direction: column;
@@ -428,6 +430,9 @@ $text-color: #151515;
       .img-wrap {
         width: 24rem;
         height: 15rem;
+        @media (max-width: 420px) {
+          width: 20rem;
+        }
         border-radius: 9px;
         position: relative;
         overflow: hidden;
@@ -506,7 +511,7 @@ $text-color: #151515;
       align-items: flex-start;
       flex-direction: column;
       padding: 3rem 1.5rem;
-      border: solid 1px rgb(230, 224, 224);
+      border: solid 1px $fade-color;
       margin: 2rem 0.5rem;
       border-radius: 10px;
       height: 23.5rem;
@@ -536,7 +541,7 @@ $text-color: #151515;
           content: "";
           top: -2em;
           left: 0;
-          background-color: rgb(230, 224, 224);
+          background-color: $fade-color;
           height: 1px;
           width: 100%;
         }
@@ -560,11 +565,15 @@ $text-color: #151515;
     color: $text-color;
     margin: 4rem 0 1.5rem 0;
   }
-  .swiper-two{
+  .swiper-two {
+    margin-top: 3rem;
     width: 100vw;
     height: 85vh;
-    .swiper-wrapper{
-      .swiper-slide{
+    @media (max-width: 420px) {
+      height: 70vh;
+    }
+    .swiper-wrapper {
+      .swiper-slide {
         .content-wrap {
           display: flex;
           align-items: center;
@@ -575,12 +584,15 @@ $text-color: #151515;
             border-radius: 20px;
             transition: all 1s;
             position: relative;
-            &::after{
+            @media (max-width: 420px) {
+              width: 20rem;
+            }
+            &::after {
               position: absolute;
               content: "";
               bottom: 6rem;
               left: 0;
-              background-color: rgb(230, 224, 224);
+              background-color: $fade-color;
               width: 100%;
               height: 1px;
             }
@@ -596,6 +608,10 @@ $text-color: #151515;
               img {
                 width: 24rem;
                 height: 17rem;
+                @media (max-width: 420px) {
+                  width: 20rem;
+                  object-fit: cover;
+                }
                 border-radius: 20px 20px 0 0;
                 transition: all 1s;
                 &:hover {
@@ -620,26 +636,28 @@ $text-color: #151515;
                 .text {
                   color: $text-color;
                   font-size: 0.9rem;
-                  
                 }
               }
               .sub-heading {
                 font-size: 1.2rem;
                 margin-bottom: 4rem;
+                transition: 1s all;
+                &:hover {
+                  color: $base-color-one;
+                }
               }
               .text-wrap {
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
                 .text {
-                  color: rgb(230, 224, 224);
-                  
+                  color: $fade-color;
                 }
                 .icon-msg {
                   display: flex;
                   align-items: center;
                   i {
-                    color: rgb(230, 224, 224);
+                    color: $fade-color;
                     font-size: 1.25rem;
                     margin-right: 0.3rem;
                   }
@@ -651,7 +669,210 @@ $text-color: #151515;
       }
     }
   }
- .btn{
-   width: 18rem;
- }
+  .btn {
+    width: 18rem;
+  }
+}
+
+// Section Four
+
+.four {
+  width: 100vw;
+  background: #f7f7f7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 5rem;
+  .heading {
+    color: $text-color;
+    margin: 4rem 0 1.5rem 0;
+  }
+  .swiper-three {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    .swiper-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .swiper-slide {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .content-wrap {
+          margin-top: 4rem;
+          width: 80%;
+          margin-bottom: 10rem;
+          .content {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            @media (max-width: 960px) {
+              flex-direction: column;
+            }
+            img {
+            }
+            .text-wrap {
+              @media (max-width: 960px) {
+                text-align: center;
+              }
+              i {
+                font-size: 3rem;
+                color: $fade-color;
+                margin-bottom: 1.5rem;
+                @media (max-width: 960px) {
+                  margin-top: 1rem;
+                }
+              }
+              .text {
+                color: $text-color;
+                font-size: 1.3rem;
+                max-width: 650px;
+                margin-bottom: 2rem;
+              }
+              .sub-heading {
+                color: $base-color-one;
+                margin-bottom: 1rem;
+              }
+              .small-text {
+                color: $fade-color;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Home Section Five
+
+.five {
+  width: 100vw;
+  .row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    .img-wrap {
+      width: 33.33vw;
+      height: 20rem;
+      display: flex;
+      position: relative;
+      overflow: hidden;
+      @media (max-width: 720px) {
+        width: 50vw;
+      }
+      @media (max-width: 470px) {
+        width: 100vw;
+      }
+      &:hover .text-wrap {
+        opacity: 1;
+        .sub-heading {
+          transform: scale(1.05);
+          // letter-spacing: 1.2px;
+        }
+        .text {
+          transform: scale(1.02);
+          // letter-spacing: 1.2px;
+        }
+      }
+      &:hover .rotate {
+        transform: rotate(-45deg);
+        bottom: -8rem;
+      }
+      &:hover img {
+        transform: scale(1.05);
+      }
+
+      &:hover i {
+        right: 1.5rem;
+        bottom: 1.5rem;
+        opacity: 1;
+      }
+      img {
+        width: 33.33vw;
+        height: 20rem;
+        transition: all 0.5s;
+        object-fit: cover;
+        @media (max-width: 720px) {
+          width: 50vw;
+        }
+        @media (max-width: 470px) {
+          width: 100vw;
+        }
+      }
+      .text-wrap {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        opacity: 0;
+        transition: all 0.2s;
+        @media (max-width: 470px) {
+          opacity: 1;
+        }
+        .sub-heading {
+          color: white;
+          font-size: 1.9rem;
+          font-weight: 500;
+          margin-bottom: 0.8rem;
+          transform: scale(0.4);
+          transition: all 0.4s;
+          @media (max-width: 960px) {
+            font-size: 1.4rem;
+          }
+          @media (max-width: 470px) {
+            transform: scale(1.05);
+          }
+        }
+        .text {
+          text-align: center;
+          font-weight: 200;
+          transform: scale(0.4);
+          transition: all 0.4s;
+          @media (max-width: 960px) {
+            font-size: 0.8rem;
+          }
+          @media (max-width: 470px) {
+            transform: scale(1.02);
+          }
+        }
+      }
+      .rotate {
+        height: 10rem;
+        width: 20rem;
+        background-color: $base-color-one;
+        position: absolute;
+        right: -7rem;
+        bottom: -10rem;
+        transition: all 0.8s;
+        @media (max-width: 470px) {
+          transform: rotate(-45deg);
+          bottom: -8rem;
+        }
+      }
+      i {
+        position: absolute;
+        right: -3rem;
+        bottom: 1rem;
+        font-size: 1.4rem;
+        color: white;
+        transition: all 0.3s 0.4s;
+        opacity: 0;
+        @media (max-width: 470px) {
+          right: 1.5rem;
+          bottom: 1.5rem;
+          opacity: 1;
+        }
+      }
+    }
+  }
 }
