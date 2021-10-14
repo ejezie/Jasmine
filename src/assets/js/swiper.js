@@ -41,10 +41,10 @@ const swiperTwo = new Swiper('.swiper-two', {
   slidesPerView: 3,
   breakpoints: {
     // when window width is >= 320px
-    400: {
+    200: {
       slidesPerView: 1,
     },
-    // when window width is >= 480px
+  
     960: {
       slidesPerView: 2,
     },
@@ -55,3 +55,15 @@ const swiperTwo = new Swiper('.swiper-two', {
   }
 });
 
+const swiperThree = new Swiper('.swiper-three', {
+  // Optional parameters
+  direction: 'horizontal',
+  loop: true,
+  slidesPerView: 1,
+
+  // Navigation arrows
+  navigation: {
+    nextEl: '.next-three',
+    prevEl: '.prev-three',
+  },
+});
