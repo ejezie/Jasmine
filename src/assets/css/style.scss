@@ -55,6 +55,77 @@ $fade-color: rgb(230, 224, 224);
   color: white;
   background-color: $base-color-one;
 }
+.banner {
+  width: 100vw;
+  display: flex;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(77, 40, 40, 0.5)),
+    url(../img/Ambuspeed.jpeg);
+  background-position: center center;
+  background-size: cover;
+  .content-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    margin: 10rem 0;
+    .heading {
+      font-size: 5rem;
+      margin-bottom: 5rem;
+    }
+    .text-wrap {
+      display: flex;
+      align-items: center;
+      .link {
+        margin: 0 0.5rem;
+        text-decoration: none;
+        color: white;
+      }
+      i {
+        margin: 0 0.5rem;
+        color: white;
+      }
+      .text {
+        margin: 0 0.5rem;
+      }
+    }
+  }
+}
+.text-btn {
+  display: flex;
+  flex-direction: column;
+  .heading {
+    margin-bottom: 4.8rem;
+    position: relative;
+    color: $text-color;
+    @media (max-width: 720px) {
+      font-size: 1.5rem;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: -3rem;
+      left: 0;
+      background-color: $base-color-one;
+      width: 10rem;
+      height: 3px;
+    }
+  }
+  .text {
+    margin-bottom: 1rem;
+    max-width: 380px;
+    line-height: 1.5;
+    color: $text-color;
+  }
+  .btn {
+    background: transparent;
+    border: solid $fade-color 2px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    color: $text-color;
+  }
+}
 
 // NAVBAR
 
@@ -871,6 +942,284 @@ $fade-color: rgb(230, 224, 224);
           right: 1.5rem;
           bottom: 1.5rem;
           opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+// Section Six
+
+.six {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url(../img/Urgences-hopital.jpg) fixed;
+  background-position: center center;
+  background-size: cover;
+  .content-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @media (max-width: 900px) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    width: 100%;
+    margin: 5rem 0;
+    .text-wrap {
+      margin-left: 3rem;
+      @media (max-width: 900px) {
+        margin-left: 2rem;
+      }
+      .heading {
+        color: $base-color-one;
+        margin-bottom: 1rem;
+      }
+      .text {
+        color: white;
+        max-width: 900px;
+        @media (max-width: 900px) {
+          margin-bottom: 1.5rem;
+        }
+      }
+    }
+    .btn {
+      background-color: transparent;
+      border: 2px solid white;
+      margin-right: 3rem;
+      @media (max-width: 900px) {
+        margin-left: 2rem;
+        margin-right: 0rem;
+      }
+    }
+  }
+}
+
+// FOOTER
+.footer {
+  background-color: #0f0c1d;
+  width: 100vw;
+  display: flex;
+  .content-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    @media (max-width: 900px) {
+      justify-content: center;
+      flex-direction: column;
+    }
+    width: 100%;
+    margin: 3rem 0;
+    .nav-img {
+      @media (max-width: 900px) {
+        margin-bottom: 2rem;
+      }
+    }
+    .text {
+      @media (max-width: 900px) {
+        margin-bottom: 2rem;
+      }
+    }
+    .icon-wrap {
+      display: flex;
+      align-items: center;
+      .icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 3rem;
+        width: 3rem;
+        border-radius: 50%;
+        background-color: #252136;
+        margin: 0 0.2rem;
+        @media (max-width: 900px) {
+          margin-bottom: 2rem;
+        }
+        i {
+          font-size: 1.5rem;
+          color: white;
+        }
+      }
+    }
+  }
+}
+
+// About one
+
+.about-one {
+  display: flex;
+  align-items: center;
+  width: 100vw;
+  margin: 4rem 0;
+  .img-wrap {
+    width: 50vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 4rem;
+    img {
+      width: 36rem;
+      height: 23rem;
+    }
+  }
+  .text-btn {
+    width: 45vw;
+    // margin-left: 8rem;
+    .heading {
+    }
+    .bold {
+      font-weight: 600;
+    }
+    .text {
+      max-width: 500px;
+    }
+    .btn {
+      margin-top: 0.5rem;
+      width: 15rem;
+      height: 4rem;
+    }
+  }
+}
+
+// About Section Two
+.about-two {
+  display: flex;
+  width: 100vw;
+  background: #f7f7f7;
+  .content-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 6rem 0;
+    .content {
+      margin: 0 0.5rem;
+      .icon-wrap {
+        display: flex;
+        margin-bottom: 0.5rem;
+        img {
+          width: 2rem;
+          margin: 0 1rem 0 0;
+        }
+        .sub-heading {
+          color: $text-color;
+        }
+      }
+      .text {
+        color: rgb(87, 85, 85);
+        max-width: 270px;
+        line-height: 1.7;
+        font-weight: 200;
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
+
+// About Section Three
+
+.about-three{
+  display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+  width: 100vw;
+  .heading{
+    color: $text-color;
+    position: relative;
+    text-align: center;
+    &::before{
+      content: "";
+      position: absolute;
+      bottom: -1.5rem;
+      left: 2.4rem;
+      height: 3px;
+      width: 60%;
+      background-color: $base-color-one;
+    }
+  }
+  .content-wrap{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 3rem 0;
+    .content{
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      margin: 2rem 1.4rem;
+      img{
+        margin-bottom: 1.5rem;
+        width: 17rem;
+      }
+      .text{
+        color: $base-color-one;
+        font-size: 1.2rem;
+        font-weight: 500;
+      }
+      .position{
+        font-style: italic;
+        color: rgb(87, 85, 85);
+        margin-top: 0.5rem;
+        font-size: 1rem;
+        font-weight: 400;
+      }
+      .icon-wrap{
+        display: flex;
+        align-items: center;
+        margin-top: 1.2rem;
+        i{
+          font-size: 1.2rem;
+          margin: 0 1rem;
+          color: rgb(87, 85, 85);
+        }
+      }
+    }
+  }
+}
+
+// About Section Four
+.about-four{
+  background-color: #29293a;
+  display: flex;
+  width: 100vw;
+  .content-wrap{
+    display: flex;
+    width: 100%;
+    .left{
+      width: 50vw;
+      .heading-wrap{
+        .heading{
+          
+        }
+        .text{
+          
+        }
+      }
+      .contents{
+        .content{
+          .text{
+
+          }
+          .round{
+
+          }
+          .text-wrap{
+
+          }
+        }
+      }
+    }
+    .right{
+      .img-wrap{
+        img{
+          width: 20rem;
         }
       }
     }
