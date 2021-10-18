@@ -59,7 +59,7 @@ $fade-color: rgb(230, 224, 224);
   width: 100vw;
   display: flex;
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(77, 40, 40, 0.5)),
-    url(../img/Ambuspeed.jpeg);
+    url(../img/oxy.jpeg) fixed;
   background-position: center center;
   background-size: cover;
   .content-wrap {
@@ -129,9 +129,14 @@ $fade-color: rgb(230, 224, 224);
 }
 
 // NAVBAR
-
+.fixed{
+  box-shadow: 2px 1px 3px black;
+  border-bottom: 1px solid black ;
+  position: fixed;
+}
 .navbar {
   width: 100vw;
+  z-index: 3;
   .active {
     color: #ff682e !important;
     position: relative;
@@ -182,7 +187,9 @@ $fade-color: rgb(230, 224, 224);
   .nav-bottom {
     display: flex;
     align-items: center;
+    z-index: 3;
     justify-content: space-between;
+    background-color: white;
     height: 6rem;
     width: 100%;
     .logo-wrap {
@@ -316,6 +323,43 @@ $fade-color: rgb(230, 224, 224);
       }
     }
   }
+  .display {
+    margin-left: 0rem !important;
+    display: inline-block !important;
+    transition: all ease-in 0.5s !important;
+  }
+  .nav-mobile {
+    z-index: 2;
+    margin-left: -50rem;
+    transition: all ease-in 0.5s;
+    display: none;
+    position: fixed;
+    .wrap {
+      display: flex;
+      align-items: flex-start;
+      flex-direction: column;
+      height: 100vh;
+      width: 60vw;
+      background-color: white;
+      box-shadow: 2px 5px 5px black;
+      .nav-item {
+        margin-bottom: 1rem;
+        text-decoration: none;
+        width: 100%;
+        margin: 0.5rem 0;
+        height: 3rem;
+        display: flex;
+        align-items: center;
+        color: $text-color;
+        font-weight: 600;
+        padding-left: 1rem;
+      }
+    }
+    .activate {
+      background: $base-color-one;
+      color: white !important;
+    }
+  }
 }
 
 // SLIDES
@@ -323,6 +367,7 @@ $fade-color: rgb(230, 224, 224);
 .swiper-one {
   height: 100vh;
   width: 100vw;
+  // position: relative;
   @media (max-width: 960px) {
     height: 70vh;
   }
@@ -337,11 +382,82 @@ $fade-color: rgb(230, 224, 224);
       align-items: center;
       justify-content: space-between;
       width: 100%;
+      .form {
+        margin-right: 3rem;
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: 3rem;
+        border-radius: 10px;
+        z-index: 5;
+        @media (max-width: 960px) {
+          display: none;
+        }
+        .heading {
+          color: rgb(49, 49, 49);
+          font-weight: 500;
+          font-size: 1.6rem;
+          margin-bottom: 1rem;
+        }
+        label {
+          font-size: 0.7rem;
+          color: rgb(150, 149, 149);
+          letter-spacing: 1.2px;
+          margin-left: 1rem;
+        }
+        .input-wrap {
+          .inp {
+            margin: 0.5rem 0rem;
+          }
+          input {
+            width: 22rem;
+            border: 1px solid transparent;
+            border-radius: 30px;
+            outline: none;
+            background-color: white;
+            height: 3.7rem;
+            padding: 1.1rem;
+            margin-right: 2rem;
+            margin-bottom: 2rem;
+            // @media (max-width: 1100px) {
+            //   width: 15rem;
+            // }
+            // @media (max-width: 920px) {
+            //   width: 8.5rem;
+            //   margin-right: 1rem;
+            // }
+          }
+        }
+        .counter-wrap {
+          display: flex;
+          align-items: center;
+          .counter {
+            background-color: transparent;
+            input {
+              width: 10.8rem;
+              border: 1px solid transparent;
+              border-radius: 30px;
+              outline: none;
+              background-color: white;
+              height: 3.7rem;
+              padding: 1.1rem;
+              margin-right: 0.5rem;
+              margin-bottom: 2rem;
+              // @media (max-width: 1100px) {
+              //   width: 15rem;
+              // }
+              // @media (max-width: 920px) {
+              //   width: 8.5rem;
+              //   margin-right: 1rem;
+              // }
+            }
+          }
+        }
+      }
       // opacity: 1 !important;
       .text-wrap {
         display: flex;
         flex-direction: column;
         margin-left: 3rem;
+        margin-right: 2rem;
         .heading {
           margin-bottom: 4.8rem;
           position: relative;
@@ -368,38 +484,6 @@ $fade-color: rgb(230, 224, 224);
           border: solid white 2px;
           font-size: 1rem;
           font-weight: 700;
-        }
-      }
-      .form {
-        margin-right: 3rem;
-        background-color: rgba(255, 255, 255, 0.97);
-        display: none;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        label {
-          font-size: 0.7rem;
-          color: rgb(150, 149, 149);
-          letter-spacing: 1.2px;
-        }
-        .input-wrap {
-          .inp {
-            margin: 0.5rem 0rem;
-          }
-          input {
-            border: 0px transparent solid;
-            width: 90%;
-            height: 4rem;
-            border-radius: 30px;
-          }
-        }
-        .counter-wrap {
-          display: flex;
-          align-items: center;
-          background-color: white;
-          .counter {
-            background-color: transparent;
-          }
         }
       }
     }
@@ -432,9 +516,101 @@ $fade-color: rgb(230, 224, 224);
       margin: 0 1rem !important;
     }
   }
+
+  .btn {
+    width: 100%;
+    cursor: pointer;
+  }
 }
 
 // Home Section One
+.one-form{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .form-one-wrap {
+    display: none;
+    width: 100%;
+    margin-top: 3rem;
+    background-color: $fade-color;
+    padding: 3rem;
+    border-radius: 10px;
+    @media (max-width: 960px) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    flex-direction: column;
+      width: 60%;
+    }
+    @media (max-width: 500px) {
+      width: 100%;
+    }
+    .heading {
+      color: rgb(49, 49, 49);
+      font-weight: 500;
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+    }
+    label {
+      font-size: 0.7rem;
+      color: rgb(150, 149, 149);
+      letter-spacing: 1.2px;
+      margin-left: 1rem;
+    }
+    .input-wrap {
+      .inp {
+        margin: 0.5rem 0rem;
+      }
+      input {
+        width: 22rem;
+        border: 1px solid transparent;
+        border-radius: 30px;
+        outline: none;
+        background-color: white;
+        height: 3.7rem;
+        padding: 1.1rem;
+        margin-right: 2rem;
+        margin-bottom: 2rem;
+        @media (max-width: 600px) {
+          width: 18rem;
+        }
+        // @media (max-width: 920px) {
+        //   width: 8.5rem;
+        //   margin-right: 1rem;
+        // }
+      }
+    }
+    .counter-wrap {
+      display: flex;
+      // align-items: center;
+      flex-direction: column;
+      .counter {
+        background-color: transparent;
+        input {
+          width: 22rem;
+          border: 1px solid transparent;
+          border-radius: 30px;
+          outline: none;
+          background-color: white;
+          height: 3.7rem;
+          padding: 1.1rem;
+          margin-right: 0.5rem;
+          margin-bottom: 2rem;
+          @media (max-width: 600px) {
+            width: 18rem;
+          }
+          // @media (max-width: 920px) {
+          //   width: 8.5rem;
+          //   margin-right: 1rem;
+          // }
+        }
+      }
+    }
+  }
+  .btn{
+    width: 100%;
+  }
+}
 .one {
   width: 100vw;
   margin-top: 9rem;
@@ -1072,6 +1248,7 @@ $fade-color: rgb(230, 224, 224);
     img {
       width: 36rem;
       height: 23rem;
+      object-fit: cover;
       @media (max-width: 1050px) {
         width: 27rem;
         height: 21rem;
@@ -1098,7 +1275,7 @@ $fade-color: rgb(230, 224, 224);
       font-weight: 600;
     }
     .text {
-      max-width: 700px;
+      max-width: 500px;
     }
     .btn {
       margin-top: 0.5rem;
@@ -1172,9 +1349,9 @@ $fade-color: rgb(230, 224, 224);
       content: "";
       position: absolute;
       bottom: -1.5rem;
-      left: 0rem;
+      left: 15%;
       height: 3px;
-      width: 100%;
+      width: 70%;
       background-color: $base-color-one;
     }
   }
@@ -1390,19 +1567,19 @@ $fade-color: rgb(230, 224, 224);
         content: "";
         position: absolute;
         bottom: -1rem;
-        left: 0rem;
+        left: 15%;
         height: 3px;
-        width: 100%;
+        width: 70%;
         background-color: $base-color-one;
       }
     }
-    .text{
+    .text {
       color: $text-color;
       max-width: 900px;
       text-align: center;
     }
   }
-  .btn{
+  .btn {
     margin-bottom: 4rem;
     width: 17rem;
     height: 4rem;
@@ -1410,22 +1587,345 @@ $fade-color: rgb(230, 224, 224);
 }
 
 // About Six Section
-.about-six{
+.about-six {
   width: 100vw;
   background-color: $base-color-one;
   display: flex;
-  .text-wrap{
+  .text-wrap {
     margin: 3.5rem 0;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    .text{
+    .text {
       max-width: 800px;
       text-align: center;
-      a{
+      a {
         text-decoration: none;
         color: white;
+      }
+    }
+  }
+}
+
+// Service One Section
+.service-one {
+  flex-direction: row-reverse;
+  margin: 4rem 0;
+  @media (max-width: 900px) {
+    flex-direction: column-reverse;
+  }
+  .text-btn {
+    margin-left: 3rem;
+    @media (max-width: 900px) {
+      margin-left: 0rem;
+    }
+  }
+}
+
+// Service Two Section
+.service-two {
+  background-color: #0f0c1d;
+  .heading {
+    color: white;
+    margin: 4rem 0 1.5rem 0;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: -1.5rem;
+      left: 15%;
+      height: 3px;
+      width: 70%;
+      background-color: $base-color-one;
+    }
+  }
+  .content-wrap {
+    .content {
+      border: solid 2px white;
+      &:hover {
+        background-color: $base-color-one;
+        border: solid 2px $base-color-one;
+        box-shadow: 0.1px 0.1px 10px rgba(0, 0, 0, 0.1);
+      }
+      .sub-heading {
+        color: white;
+      }
+      i {
+        font-size: 2.5rem;
+        color: white;
+        margin: 0 0 2rem 0;
+      }
+      .text {
+        color: white;
+        &::before {
+          background-color: white;
+        }
+      }
+    }
+  }
+}
+
+// Service Three Section
+
+.service-three {
+  flex-direction: row-reverse;
+  margin: 0 0;
+  @media (max-width: 900px) {
+    flex-direction: column-reverse;
+  }
+  .img-wrap {
+    width: 50vw;
+    margin-right: 0rem;
+    @media (max-width: 900px) {
+      width: 100vw;
+      margin-right: 0rem;
+    }
+    img {
+      width: 50vw;
+      height: 100%;
+      @media (max-width: 1050px) {
+        width: 50vw;
+        height: 100%;
+      }
+      @media (max-width: 900px) {
+        width: 100vw;
+        height: 40vh;
+        margin-left: 0rem;
+      }
+    }
+  }
+  .text-btn {
+    margin-left: 3rem;
+    width: 50vw;
+    @media (max-width: 1050px) {
+      width: 55vw;
+    }
+    @media (max-width: 900px) {
+      width: 90vw;
+      margin-bottom: 3rem;
+    }
+    @media (max-width: 900px) {
+      margin-left: 0rem;
+      margin: 3rem 0;
+    }
+    .text {
+      max-width: 500px;
+      font-size: 0.9rem;
+      @media (max-width: 900px) {
+        max-width: 800px;
+      }
+    }
+    .btn {
+      background-color: $base-color-one;
+      color: white;
+      border: none;
+      transition: all 0.5s;
+      &:hover {
+        background-color: #ff4901;
+      }
+    }
+  }
+}
+.no-reverse {
+  flex-direction: row;
+  margin: 0 0;
+  @media (max-width: 900px) {
+    flex-direction: column-reverse;
+  }
+  .img-wrap {
+    width: 50vw;
+    margin-right: 0rem;
+    @media (max-width: 900px) {
+      width: 100vw;
+      margin-right: 0rem;
+    }
+    img {
+      width: 50vw;
+      height: 100%;
+      @media (max-width: 1050px) {
+        width: 50vw;
+        height: 100%;
+      }
+      @media (max-width: 900px) {
+        width: 100vw;
+        height: 40vh;
+        margin-left: 0rem;
+      }
+    }
+  }
+  .text-btn {
+    margin-left: 3rem;
+    width: 50vw;
+    @media (max-width: 1050px) {
+      width: 55vw;
+    }
+    @media (max-width: 900px) {
+      width: 90vw;
+      margin-bottom: 3rem;
+    }
+    @media (max-width: 900px) {
+      margin-left: 0rem;
+      margin: 3rem 0;
+    }
+    .text {
+      max-width: 500px;
+      font-size: 0.9rem;
+      @media (max-width: 900px) {
+        max-width: 800px;
+      }
+    }
+    .btn {
+      background-color: $base-color-one;
+      color: white;
+      border: none;
+      transition: all 0.5s;
+      &:hover {
+        background-color: #ff4901;
+      }
+    }
+  }
+}
+
+// Contact Forms Section
+.contact {
+  width: 100vw;
+  display: flex;
+  align-items: flex-start;
+  @media (max-width: 920px) {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .left {
+    width: 60vw;
+    margin: 5rem 0 5rem 3rem;
+    @media (max-width: 920px) {
+      width: 80vw;
+      margin: 5rem 0 5rem 0rem;
+    }
+    .heading {
+      color: $text-color;
+      margin-bottom: 1.3rem;
+      position: relative;
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: -0.6rem;
+        left: 0;
+        background-color: $base-color-one;
+        width: 6rem;
+        height: 3px;
+      }
+    }
+    .text {
+      color: $text-color;
+      margin-bottom: 2rem;
+      max-width: 650px;
+      line-height: 1.7;
+      font-weight: 300;
+      @media (max-width: 1100px) {
+        max-width: 550px;
+      }
+    }
+    form {
+      .input-wrap {
+        display: flex;
+        align-items: center;
+        .input {
+          label {
+            font-size: 0.7rem;
+            margin: 0 0 0rem 1rem;
+          }
+          input {
+            width: 20rem;
+            border: 1px solid transparent;
+            border-radius: 30px;
+            outline: none;
+            background-color: #f7f7f7;
+            height: 3.7rem;
+            padding: 1.1rem;
+            margin-right: 2rem;
+            margin-bottom: 2rem;
+            @media (max-width: 1100px) {
+              width: 15rem;
+            }
+            @media (max-width: 920px) {
+              width: 8.5rem;
+              margin-right: 1rem;
+            }
+          }
+        }
+      }
+      .message {
+        label {
+          font-size: 0.7rem;
+          margin: 0 0 0rem 1rem;
+        }
+        textarea {
+          width: 42rem;
+          border: 1px solid transparent;
+          border-radius: 30px;
+          outline: none;
+          background-color: #f7f7f7;
+          // height: 3.7rem;
+          padding: 1.1rem;
+          margin-right: 2rem;
+          margin-bottom: 2rem;
+          @media (max-width: 1100px) {
+            width: 32rem;
+          }
+          @media (max-width: 920px) {
+            width: 18rem;
+          }
+        }
+      }
+      .btn {
+        width: 15rem;
+        transition: all 0.5s;
+        &:hover {
+          background-color: #ff4901;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  .right {
+    width: 40vw;
+    margin: 5rem 0 5rem 3rem;
+    @media (max-width: 920px) {
+      width: 80vw;
+      margin: 5rem 0 5rem 0rem;
+    }
+    .content-wrap {
+      .content {
+        .sub-heading {
+          position: relative;
+          margin-bottom: 2rem;
+          font-weight: 600;
+          &::before {
+            content: "";
+            position: absolute;
+            bottom: -1rem;
+            left: 0;
+            background-color: $fade-color;
+            width: 80%;
+            height: 1px;
+          }
+        }
+        .text-wrap {
+          display: flex;
+          align-items: center;
+          margin-bottom: 3rem;
+          i {
+            margin-right: 1rem;
+            font-size: 1.4rem;
+            color: $base-color-one;
+          }
+          .text {
+            color: $text-color;
+          }
+        }
       }
     }
   }
