@@ -24,7 +24,7 @@ link %} dans le "if". Donc il faut écrire le lien manuellement. {% endcomment %
   </div>
   <div class="nav-bottom">
     <div class="logo-wrap">
-      <i class="fas fa-bars bars"></i>
+      <i class="fas fa-bars bars" onclick="navMob()"></i>
       <img src="../assets/img/logo.png" alt="logo" class="nav-img">
     </div>
      
@@ -44,7 +44,19 @@ link %} dans le "if". Donc il faut écrire le lien manuellement. {% endcomment %
       </div>
       <button class="btn"><a href="{% link devis.html %}" class="nav-item">Devis</a></button>
   </div>
+  <div class="nav-mobile">
+    <div class="wrap">
+      <a href="{% link accueil.html %}" class="nav-item {% if page.url == '/' %} activate {% endif %}">Accueil</a>
+      <a href="{% link notre-enterprise.html %}" class="nav-item {% if page.url == '/notre-enterprise' %} activate {% endif %}">Notre Enterprise</a>
+      <a href="{% link service.html %}" class="nav-item {% if page.url == '/service' %} activate {% endif %}">Services</a>
+      <a href="{% link contact.html %}" class="nav-item {% if page.url == '/contact' %} activate {% endif %}">Contact</a>
+      <a href="{% link devis.html %}" class="nav-item {% if page.url == '/devis' %} activate {% endif %}">Devis</a>
+    </div>
+
+  </div>
 </div>
+
+
 
 <script>
   function showElement() {
@@ -56,4 +68,23 @@ link %} dans le "if". Donc il faut écrire le lien manuellement. {% endcomment %
   function offElement() {
     document.querySelector(".search").classList.toggle("off")
   };
+  function navMob() {
+    document.querySelector(".nav-mobile").classList.toggle("display");
+  }
+window.addEventListener("click", (e) => {
+  if( !e.target.matches(".bars")){
+    var navmobile = document.querySelector(".nav-mobile");
+    navmobile.classList.remove("display")
+  }
+})
+window.addEventListener("scroll", () => {
+  if (scrollY > 50){
+   var navbar = document.querySelector(".navbar")
+    navbar.classList.add("fixed")
+  }
+  if (scrollY < 100){
+   var navbar = document.querySelector(".navbar")
+    navbar.classList.remove("fixed")
+  }
+})
 </script>
