@@ -23,6 +23,7 @@ jQuery(document).ready(function ($) {
           document
             .querySelector("#contact-form-response")
             .classList.add("success");
+          alert("success");
           document.querySelector(
             "#contact-form-response"
           ).innerHTML = successMessage;
